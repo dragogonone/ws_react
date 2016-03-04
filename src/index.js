@@ -3,6 +3,7 @@ import 'isomorphic-fetch'
 import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
+import Header from './Header';
 
 var Search = React.createClass({
     getInitialState: function() {
@@ -31,3 +32,4 @@ var Results = React.createClass({
     }
 });
 render(<Search />, document.getElementById('root'));
+render(<Header />, document.getElementById('header'));

@@ -18,8 +18,6 @@ export default class Header extends Component {
           </ul>
         </div>
 
-        <div className={styles.hidden}>
-        </div>
       </div>
     )
   }

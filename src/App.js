@@ -3,6 +3,7 @@ import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
 import ToggleDisplay from 'react-toggle-display';
 import Modal from './Modal';
+import Header from './Header.js'
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -53,16 +54,13 @@ export default class App extends Component {
     }
     let popularProject = this.state.data.data.sections[3]
     return (
-      <PortalSlider>
-        { popularProject.projects.map((project) => {
-          return <PortalProject project={project} key={project.id} />
-        }) }
-        <div>
-          <Modal contents={contents}>
-          <div></div>
-          </Modal>
-        </div>
-      </PortalSlider>
+      <div>
+        <PortalSlider>
+          { popularProject.projects.map((project) => {
+            return <PortalProject project={project} key={project.id} />
+          }) }
+        </PortalSlider>
+      </div>
     )
   }
 }
