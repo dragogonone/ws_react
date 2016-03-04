@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styles from './PortalSlider.css'
 import $ from "jquery";
 import ReactDOM from 'react-dom'
+import Slider from 'react-slick'
 export default class PortalSlider extends Component {
   constructor(props) {
       super(props)
@@ -32,22 +33,32 @@ export default class PortalSlider extends Component {
     })
   }
   onClickHide(){
+    this.setState({
+        visible: false
+    })
     $(ReactDOM.findDOMNode(this.refs.main)).hide()
   }
 
   render() {
+    var settings = {
+      dots: true,
+      speed: 1000,
+      slidesToShow: 5,
+      slidesToScroll: 2,
+      arrows: true
+    };
     return (
       <div ref="main">
         <a onClick={this.onClickHide.bind(this)} ref="hide">消える</a>
         <a onClick={this.onClickPrev.bind(this)}>前へ</a>
         <a onClick={this.onClickNext.bind(this)}>次へ</a>
-        <div className={styles.base}>
+        <Slider {...settings} className={styles.base}>
           { this.props.children.map((child, index) => {
             return <div style={this.calcStyle(index - this.state.currentIndex)} key={index} className={styles.item}>
               { child }
             </div>
           }) }
-        </div>
+        </Slider>
       </div>
     )
   }

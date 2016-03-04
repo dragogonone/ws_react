@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
+
 export default class App extends Component {
   constructor(props) {
     super(props)
