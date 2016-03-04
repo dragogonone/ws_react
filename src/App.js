@@ -47,23 +47,22 @@ export default class App extends Component {
   render() {
     // 見た目の定義
     let data = this.state.data;
+    let contents = this.state.contents;
     if (!data) {
       return <div><img src="http://www.skipso.com/images/loading.gif" /></div>
     }
     let popularProject = this.state.data.data.sections[3]
     return (
-		<ToggleDisplay show={this.state.isAuthorized}>
       <PortalSlider>
         { popularProject.projects.map((project) => {
           return <PortalProject project={project} key={project.id} />
         }) }
-      </PortalSlider>
-      </ToggleDisplay>
       <div>
         <Modal contents={contents}>
         <div></div>
         </Modal>
       </div>
+      </PortalSlider>
     )
   }
 }
