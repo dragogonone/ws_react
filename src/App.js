@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
 import ToggleDisplay from 'react-toggle-display';
+import Modal from './Modal';
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -11,6 +12,7 @@ export default class App extends Component {
 
   componentDidMount() {
     this.fetchPortalData()
+    this.setModalContents()
   }
 
   fetchPortalData() {
@@ -30,6 +32,18 @@ export default class App extends Component {
       })
   }
 
+    setModalContents(){
+        this.setState({
+            contents : {
+                title : "タイトル",
+                main_img : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Japanese_Hiragana_kyokashotai_A.svg/150px-Japanese_Hiragana_kyokashotai_A.svg.png",
+                description : "詳細説明",
+                logo : "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Japanese_Hiragana_kyokashotai_A.svg/150px-Japanese_Hiragana_kyokashotai_A.svg.png",
+                companyName : "企業名"
+            }
+        })
+    }
+
   render() {
     // 見た目の定義
     let data = this.state.data;
@@ -45,6 +59,11 @@ export default class App extends Component {
         }) }
       </PortalSlider>
       </ToggleDisplay>
+      <div>
+        <Modal contents={contents}>
+        <div></div>
+        </Modal>
+      </div>
     )
   }
 }

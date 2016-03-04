@@ -58,5 +58,6 @@
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-slick": "^0.11.1"
+    "react-skylight": "^0.3.0"
   }
 }
