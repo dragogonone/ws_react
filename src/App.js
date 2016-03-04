@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
-
+import ToggleDisplay from 'react-toggle-display';
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -34,15 +34,17 @@ export default class App extends Component {
     // 見た目の定義
     let data = this.state.data;
     if (!data) {
-      return <div><p>Now Loading...</p></div>
+      return <div><img src="http://www.skipso.com/images/loading.gif" /></div>
     }
     let popularProject = this.state.data.data.sections[3]
     return (
+		<ToggleDisplay show={this.state.isAuthorized}>
       <PortalSlider>
         { popularProject.projects.map((project) => {
           return <PortalProject project={project} key={project.id} />
         }) }
       </PortalSlider>
+      </ToggleDisplay>
     )
   }
 }
