@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './PortalSlider.css'
 import $ from "jquery";
-import ReactDOM from require('react-dom')
+import ReactDOM from 'react-dom'
 export default class PortalSlider extends Component {
   constructor(props) {
       super(props)
@@ -32,13 +32,13 @@ export default class PortalSlider extends Component {
     })
   }
   onClickHide(){
-    $(ReactDOM.findDOMNode(this)).hide()
+    $(ReactDOM.findDOMNode(this.refs.main)).hide()
   }
 
   render() {
     return (
-      <div>
-        <a onClick={this.onClickHide.bind(this)}>前へ</a>
+      <div ref="main">
+        <a onClick={this.onClickHide.bind(this)} ref="hide">消える</a>
         <a onClick={this.onClickPrev.bind(this)}>前へ</a>
         <a onClick={this.onClickNext.bind(this)}>次へ</a>
         <div className={styles.base}>
