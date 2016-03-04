@@ -57,11 +57,11 @@ export default class App extends Component {
         { popularProject.projects.map((project) => {
           return <PortalProject project={project} key={project.id} />
         }) }
-      <div>
-        <Modal contents={contents}>
-        <div></div>
-        </Modal>
-      </div>
+        <div>
+          <Modal contents={contents}>
+          <div></div>
+          </Modal>
+        </div>
       </PortalSlider>
     )
   }
