@@ -14,7 +14,7 @@ var Search = React.createClass({
     render: function() {
         return (
             <div>
-                <input type="submit" value="Search" onClick={this.onClick} />
+                <input type="submit" value="もっとみる" onClick={this.onClick} />
                 { this.state.showResults ? <Results /> : null }
             </div>
         );
