@@ -44,14 +44,10 @@ export default class PortalSlider extends Component {
       dots: true,
       speed: 1000,
       slidesToShow: 5,
-      slidesToScroll: 2,
+      slidesToScroll: 3,
       arrows: true
     };
     return (
-      <div ref="main">
-        <a onClick={this.onClickHide.bind(this)} ref="hide">消える</a>
-        <a onClick={this.onClickPrev.bind(this)}>前へ</a>
-        <a onClick={this.onClickNext.bind(this)}>次へ</a>
         <Slider {...settings} className={styles.base}>
           { this.props.children.map((child, index) => {
             return <div style={this.calcStyle(index - this.state.currentIndex)} key={index} className={styles.item}>
@@ -59,7 +55,6 @@ export default class PortalSlider extends Component {
             </div>
           }) }
         </Slider>
-      </div>
     )
   }
 }
