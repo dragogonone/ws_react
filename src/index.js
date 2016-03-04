@@ -4,6 +4,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
 import Header from './Header';
+import NewColumn from './NewColumn.js'
 
 var Search = React.createClass({
     getInitialState: function() {
@@ -15,7 +16,7 @@ var Search = React.createClass({
     render: function() {
         return (
             <div>
-                <input type="submit" value="もっとみる" onClick={this.onClick} />
+                <input type="submit" value="インターンシップの募集" onClick={this.onClick} />
                 { this.state.showResults ? <Results /> : null }
             </div>
         );
@@ -33,3 +34,5 @@ var Results = React.createClass({
 });
 render(<Search />, document.getElementById('root'));
 render(<Header />, document.getElementById('header'));
+render(<NewColumn />, document.getElementById('newColumn'));
+render(<NewColumn />, document.getElementById('second'));

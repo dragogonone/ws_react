@@ -4,7 +4,7 @@ import PortalSlider from './PortalSlider'
 import ToggleDisplay from 'react-toggle-display';
 import Modal from './Modal';
 import Header from './Header.js'
-export default class App extends Component {
+export default class NewColumn extends Component {
   constructor(props) {
     super(props)
     // 状態の定義
@@ -52,7 +52,7 @@ export default class App extends Component {
     if (!data) {
       return <div><img src="http://www.skipso.com/images/loading.gif" /></div>
     }
-    let popularProject = this.state.data.data.sections[4]
+    let popularProject = this.state.data.data.sections[3]
     return (
       <div>
         <PortalSlider>
